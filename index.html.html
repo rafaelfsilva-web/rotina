@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pi-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minha Rotina</title>
+</head>
+<body>
+    <h1>Minha Rotina</h1>
+    <p id="data-hoje"></p>
+    <script>
+
+     const dias = ['Domingo','Segunda','Terça','Quarta','Quinta','Sexta','Sábado'];
+     const hoje = new Date();
+     const nomeDia = dias[hoje.getDay()];
+     const dia = hoje.getDate();
+     const mes = hoje.getMonth() + 1;
+
+      document.getElementById('data-hoje').textContent = `${nomeDia}, ${dia}/${mes}`;
+
+      const atividades = [
+  { nome: "Estudo",                  horario: "7:00 – 8:30",  icone: "📚" },
+  { nome: "Exercícios em casa",      horario: "8:30 – 9:00",  icone: "🏠" },
+  { nome: "Passeio com a cachorra",  horario: "9:00 – 9:20  icone: "🐕" },
+  { nome: "Se arrumar + deslocamento", horario: "9:20 – 9:40", icone: "🚗" },
+  { nome: "Trabalho",                horario: "10:00 – 18:00", icone: "💼" },
+];
+const lista = document.getElementById('lista');
+
+atividades.forEach(function(atividade) {
+  const item = document.createElement('div');
+  item.textContent = atividade.icone + ' ' + atividade.nome + ' — ' + atividade.horario;
+  lista.appendChild(item);
+});
+  </script>
+
+</body>
+</html>
